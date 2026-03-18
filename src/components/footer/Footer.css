@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer p {
+    font-size: 0.9rem;
+}
+.footer a {
+    text-decoration: none;
+
+}

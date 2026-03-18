@@ -2,7 +2,51 @@ import React from "react";
 import "../weather/Weather.css";
 
 const Weather = () => {
-  return <div className="weather">Weather</div>;
+  return (
+    <div className="weather">
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city name"
+              autoFocus="on"
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="col-3">
+            <input
+              type="submit"
+              value="search"
+              className="btn btn-primary w-100"
+            />
+          </div>
+        </div>
+      </form>
+      <h1>London</h1>
+      <ul>
+        <li>Thursday 12:00</li>
+        <li>Sunny Day</li>
+      </ul>
+      <div className="row">
+        <div className="col-6">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            alt="Sunny Day"
+          />
+          20°C
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>Paticipation: 15%</li>
+            <li>Humidity: 72%</li>
+            <li>Wind: 15kmh</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Weather;

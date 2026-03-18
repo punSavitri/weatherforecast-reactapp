@@ -1,13 +1,16 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 0 20px;
 }
 .footer p {
-    font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .footer a {
-    text-decoration: none;
-
+  text-decoration: none;
+  color: #0077cc;
+}
+.footer a:hover {
+  text-decoration: underline;
+  color: #ff6600;
 }

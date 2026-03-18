@@ -11,14 +11,14 @@ const Weather = () => {
               type="search"
               placeholder="Enter a city name"
               autoFocus="on"
-              className="form-control"
+              className="form-control search-input"
               required
             />
           </div>
           <div className="col-3">
             <input
               type="submit"
-              value="search"
+              value="Search"
               className="btn btn-primary w-100"
             />
           </div>

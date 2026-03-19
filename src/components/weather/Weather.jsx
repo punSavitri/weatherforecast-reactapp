@@ -1,5 +1,6 @@
 import React from "react";
 import "../weather/Weather.css";
+import axios from "axios";
 
 const Weather = () => {
   return (
@@ -34,8 +35,9 @@ const Weather = () => {
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="Sunny Day"
+            
           />
-          20°C
+          <span className="temperature">20</span><span className="unit">°C</span>
         </div>
         <div className="col-6">
           <ul>

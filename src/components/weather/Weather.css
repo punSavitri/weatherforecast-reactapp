@@ -31,6 +31,24 @@
   line-height: 20px;
   padding: 15px 20px;
 }
+.weather img {
+  margin-top: -35px;
+  margin-right: 5px;
+}
+.weather .temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 64px;
+  color: rgb(33, 33, 33);
+}
+.weather .unit {
+  font-size: 1.5rem;
+  position: relative;
+  top: -32px;
+  margin-left: 3px;
+  line-height: 1;
+  color: rgb(33, 33, 33);
+}
 .weather .btn {
   border: none;
   font-family: 1rem;

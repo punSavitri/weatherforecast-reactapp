@@ -72,7 +72,7 @@ const Weather = (props) => {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
+        <h2>{weatherData.city}</h2>
         <ul>
           <li>{weatherData.date}</li>
           <li className="text-capitalize">{weatherData.description}</li>

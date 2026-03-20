@@ -5,7 +5,7 @@ import Weather from "./components/weather/Weather";
 function App() {
   return (
     <div className="App">
-      <Weather />
+      <Weather defaultCity="London" />
       <Footer />
     </div>
   );

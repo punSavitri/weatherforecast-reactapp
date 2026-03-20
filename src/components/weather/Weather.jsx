@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../weather/Weather.css";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
+import FormattedDate from "../formattedDate/FormattedDate";
 
 const Weather = (props) => {
   //assign state variables
@@ -19,8 +20,7 @@ const Weather = (props) => {
       wind: response.data.wind.speed,
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
-      time: response.data.time,
-      date: "Thursday 12:00",
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -74,7 +74,9 @@ const Weather = (props) => {
         </form>
         <h2>{weatherData.city}</h2>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">

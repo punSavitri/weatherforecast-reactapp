@@ -24,9 +24,9 @@ const Weather = (props) => {
     });
   }
 
-  //search city
+  //this function to search city current weather information
   function search() {
-    //making an api call    
+    //making an api call
     let apiKey = "4c3a38t82d64bfo4330f17ff02bfbd97";
     let units = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
@@ -36,7 +36,7 @@ const Weather = (props) => {
     axios.get(apiUrl).then(displayWeatherData);
   }
 
-  //function handle submit
+  //function to handle submit by user
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -81,10 +81,7 @@ const Weather = (props) => {
           <div className="col-6">
             <div className="d-flex">
               <div>
-                <img
-                  src={weatherData.icon}
-                  alt="Sunny Day"
-                />
+                <img src={weatherData.icon} alt="Sunny Day" />
               </div>
               <div>
                 <span className="temperature">{weatherData.temperature}</span>

@@ -1,0 +1,14 @@
+.weatherinfo h2 {
+  color: #272142;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 29px;
+  margin: 40px 0px 20px 0px;
+}
+.weatherinfo li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 5px;
+}

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "../weather/Weather.css";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
-import FormattedDate from "../formattedDate/FormattedDate";
+import WeatherInfo from "../weatherInfo/WeatherInfo";
 
 const Weather = (props) => {
   //assign state variables
   const [weatherData, setWeatherData] = useState({ ready: false });
-  console.log(weatherData);
+  //console.log(weatherData);
   const [city, setCity] = useState(props.defaultCity);
 
   function displayWeatherData(response) {
@@ -20,7 +20,7 @@ const Weather = (props) => {
       wind: response.data.wind.speed,
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
-      date: new Date(response.data.time * 1000),
+      date: new Date(response.data.time * 1000), //convert API timestamp (in seconds) to a JavaScript Date object
     });
   }
 
@@ -36,18 +36,18 @@ const Weather = (props) => {
     axios.get(apiUrl).then(displayWeatherData);
   }
 
-  //function to handle submit by user
+  //handle form submission
   function handleSubmit(event) {
-    event.preventDefault();
-    search();
+    event.preventDefault(); //stop the page from refreshing
+    search(); //trigger search function on form submission
   }
 
-  //funtion to handle change city
+  //capture user input from the input text field and update the city state
   function handleChangeCity(event) {
     setCity(event.target.value);
     console.log(city);
   }
-  //if the weather data is available from api call then display form and data
+  //render weather UI when data is loaded
   if (weatherData.ready) {
     return (
       <div className="weather">
@@ -72,39 +72,13 @@ const Weather = (props) => {
             </div>
           </div>
         </form>
-        <h2>{weatherData.city}</h2>
-        <ul>
-          <li>
-            <FormattedDate date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row">
-          <div className="col-6">
-            <div className="d-flex">
-              <div>
-                <img src={weatherData.icon} alt="Sunny Day" />
-              </div>
-              <div>
-                <span className="temperature">{weatherData.temperature}</span>
-                <span className="unit">°C</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Humidity: {weatherData.humidity}</li>
-              <li>Wind: {weatherData.wind}km/h</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    search();
-    //if the data not available then display React loader spinner
+    search(); //call search function to fetch data
     return (
-      // React loader Spinner
+      // show the React loader Spinner until data arrives
       <div className="text-center mt-3 pt-3">
         <ThreeDots
           visible={true}

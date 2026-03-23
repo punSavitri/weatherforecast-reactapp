@@ -1,6 +1,7 @@
 import React from "react";
 import "./WeatherInfo.css";
 import FormattedDate from "../formattedDate/FormattedDate";
+import WeatherIcon from "../weatherIcon/WeatherIcon";
 
 const WeatherInfo = (props) => {
   return (
@@ -16,7 +17,7 @@ const WeatherInfo = (props) => {
         <div className="col-6">
           <div className="d-flex">
             <div>
-              <img src={props.data.icon} alt={props.data.description} />
+              <WeatherIcon code={props.data.icon} size={52}/>
             </div>
             <div>
               <span className="temperature">{props.data.temperature}</span>
@@ -26,7 +27,7 @@ const WeatherInfo = (props) => {
         </div>
         <div className="col-6">
           <ul>
-            <li>Humidity: {props.data.humidity}</li>
+            <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind}km/h</li>
           </ul>
         </div>

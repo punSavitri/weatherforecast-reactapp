@@ -11,7 +11,6 @@ const Weather = (props) => {
   const [city, setCity] = useState(props.defaultCity);
 
   function displayWeatherData(response) {
-    //console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.city,
@@ -19,7 +18,7 @@ const Weather = (props) => {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       description: response.data.condition.description,
-      icon: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       date: new Date(response.data.time * 1000), //convert API timestamp (in seconds) to a JavaScript Date object
     });
   }

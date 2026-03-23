@@ -18,6 +18,9 @@
 .weather canvas {
   display: inline-block;
   line-height: 64px;
+  height: 64px;
+  width: 64px;
+  margin-right: 5px;
 }
 .weather .search-input {
   display: inline-block;

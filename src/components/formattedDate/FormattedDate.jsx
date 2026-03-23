@@ -28,7 +28,7 @@ const FormattedDate = (props) => {
     minutes = `0${minutes}`;
   }
   return (
-    <div>
+    <div className="formatteddate">
       {day} {hours}:{minutes} {ampm}
     </div>
   );

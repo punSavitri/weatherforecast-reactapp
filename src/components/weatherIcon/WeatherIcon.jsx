@@ -11,7 +11,7 @@ const WeatherIcon = (props) => {
     "scattered-clouds-day": "CLOUDY",
     "scattered-clouds-night": "CLOUDY",
     "broken-clouds-day": "PARTLY_CLOUDY_DAY",
-    "broken-clouds-night": "PARTLY_CLOUDY_NIGHT",
+    "broken-cloudes-night": "PARTLY_CLOUDY_NIGHT",
     "shower-rain-day": "RAIN",
     "shower-rain-night": "RAIN",
     "rain-day": "RAIN",

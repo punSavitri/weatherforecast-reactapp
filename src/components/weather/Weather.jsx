@@ -3,6 +3,7 @@ import "../weather/Weather.css";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import WeatherInfo from "../weatherInfo/WeatherInfo";
+import WeatherForecast from "../weatherforecast/WeatherForecast";
 
 const Weather = (props) => {
   //assign state variables
@@ -72,6 +73,7 @@ const Weather = (props) => {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast/>
       </div>
     );
   } else {

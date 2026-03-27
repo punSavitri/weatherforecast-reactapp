@@ -2,7 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 const WeatherIcon = (props) => {
-  console.log(props.code);
+  //console.log(props);
   const codeMapping = {
     "clear-sky-day": "CLEAR_DAY",
     "clear-sky-night": "CLEAR_NIGHT",
@@ -11,23 +11,23 @@ const WeatherIcon = (props) => {
     "scattered-clouds-day": "CLOUDY",
     "scattered-clouds-night": "CLOUDY",
     "broken-clouds-day": "PARTLY_CLOUDY_DAY",
-    "broken-cloudes-night": "PARTLY_CLOUDY_NIGHT",
+    "broken-clouds-night": "PARTLY_CLOUDY_NIGHT",
     "shower-rain-day": "RAIN",
     "shower-rain-night": "RAIN",
     "rain-day": "RAIN",
     "rain-night": "RAIN",
-    "thunderstorm-day": "THUNDERSTORM_DAY",
-    "thunderstorm-night": "THUNDERSTORM_NIGHT",
+    "thunderstorm-day": "RAIN",
+    "thunderstorm-night": "RAIN",
     "snow-day": "SNOW",
     "snow-night": "SNOW",
-    "mist-day": "MIST",
-    "mist-night": "MIST",
+    "mist-day": "FOG",
+    "mist-night": "FOG",
   };
   return (
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
       color="1E1E1E"
-      size={64}
+      size={props.size}
       animate={true}
     />
   );

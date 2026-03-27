@@ -15,6 +15,7 @@ const Weather = (props) => {
     setWeatherData({
       ready: true,
       city: response.data.city,
+      coordinates:response.data.coordinates,
       temperature: Math.round(response.data.temperature.current),
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
@@ -72,8 +73,8 @@ const Weather = (props) => {
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData} />
-        <WeatherForecast/>
+        <WeatherInfo data={weatherData} />        
+        <WeatherForecast coordinates={weatherData.coordinates}/>
       </div>
     );
   } else {

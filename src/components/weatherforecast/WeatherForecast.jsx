@@ -8,6 +8,9 @@ const WeatherForecast = (props) => {
   const [weatherForecastData, setWeatherForecastData] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
+  //run this effect whenever the coordinates changes.
+  //it resets the loading state and fetches the 5-day forecast weather
+  //for the new latitude and longitude using the shecode API 
   useEffect(() => {
     if (!props.coordinates) return;
 
@@ -24,6 +27,10 @@ const WeatherForecast = (props) => {
     });
   }, [props.coordinates]);
 
+  //If the forecast data is not loaded yet, stop rendering the component.
+  //once loaded, display the 5-day  forecast by taking the first five items
+  //from the weatherforecastData array and rendering WeatherForecastDay component
+  //display each item as on coloum layout
   if (!loaded) return null;
   return (
     <div className="weatherforecast">
